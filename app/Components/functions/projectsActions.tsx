@@ -5,7 +5,7 @@ import {v4 as uuidv4 } from "uuid";
 
 export function addNewProject(
     data:FormData,
-    allProjects:Projeclct[],
+    allProjects:Project[],
     setAllProjects:Dispatch<SetStateAction<Project[]>>,
     setOpenProjectWindow:Dispatch<SetStateAction<boolean>>,
     selectedIcon:IconData|null,
