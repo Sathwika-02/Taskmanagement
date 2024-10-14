@@ -1,0 +1,31 @@
+import { Project } from "../Data/AllProjects";
+
+export function sortProjects(
+    allProjects:Project[],
+    selectionOptionVale:string|undefined
+){
+    const sortedProjects=[...allProjects];
+    switch(selectionOptionVale){
+        case "asc":
+            sortedProjects.sort((a,b)=>a.title.localeCompare(b.title));
+            break;
+        case "desc":
+            sortedProjects.sort((a,b)=>b.title.localeCompare(a.title));
+            break;
+        case "newest":
+            sortedProjects.sort(
+                (a,b)=>
+                    new Date(b.createdAt).getTime()-new Date(a.createdAt).getTime()
+            );
+            break;
+        case "oldest":
+            sortedProjects.sort(
+                (a,b)=>
+                    new Date(a.createdAt).getTime()-new Date(b.createdAt).getTime()
+            );
+            break;
+        default:
+            return allProjects;
+    }
+    return sortedProjects
+}
