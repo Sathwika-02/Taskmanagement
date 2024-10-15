@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import {Poppins} from "next/font/google";
 import "./globals.css";
 import ContextAppProvider from "./Components/Pages/ContextApp";
-import {
-  ClerkProvider,
-} from "@clerk/nextjs";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -35,13 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClerkProvider>
+      
       <ContextAppProvider>
       <body className={poppins.variable}>
         {children}
       </body>
       </ContextAppProvider>
-      </ClerkProvider>
+     
     </html>
   );
 }

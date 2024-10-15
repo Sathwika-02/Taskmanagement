@@ -6,8 +6,6 @@ import SplitscreenIcon from "@mui/icons-material/Splitscreen"
 import LogoutIcon from "@mui/icons-material/Logout"
 import { SvgIconProps } from "@mui/material/SvgIcon";
 import { useContextApp } from "./Pages/ContextApp";
-import { useUser } from "@clerk/nextjs";
-import Image from "next/image";
 
 // const { openSideBarObject: { openSideBar,setOpenSideBar }, sideBarMenuObject: { sideBarMenu ,setSideBarMenu} } = useContextApp();
 function Sidebar(){
@@ -41,17 +39,16 @@ function Sidebar(){
 }
 function Profile(){
   const { openSideBarObject: { openSideBar } } = useContextApp();
-  const {user}=useUser();
-  if(!user){
-    return <div className="bg-orange-600 w-9 h-9 rounded-md"></div>
-  }
-  <Image
-  alt=""
-  className="rounded-md"
-  src={user.imageUrl}
-  width={33}
-  height={33}
-  />
+  // if(!user){
+  //   return <div className="bg-orange-600 w-9 h-9 rounded-md"></div>
+  // }
+  // <Image
+  // alt=""
+  // className="rounded-md"
+  // src={user.imageUrl}
+  // width={33}
+  // height={33}
+  // />
   
    
    return(
@@ -60,8 +57,8 @@ function Profile(){
      <div className="w-7 h-7 bg-orange-600 rounded-md"></div>
      {openSideBar && (
         <ul>
-            <li className="font-bold text-[14px]">{user.lastName}{user.firstName}</li>
-            <li className="text-slate-400 text-[11px]">{user.primaryEmailAddress?.emailAddress}</li>
+            <li className="font-bold text-[14px]">Sathwika Madarapu</li>
+            <li className="text-slate-400 text-[11px]">madarapusathwika9@gmail.com</li>
         </ul>
      )}
     </div>
