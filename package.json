@@ -3,16 +3,14 @@
   "name": "taskmanagement",
   "version": "0.1.0",
   "private": true,
-  
-    "scripts": {
-      "dev": "next dev",
-      "build": "next build",
-      "start": "next start",
-      "lint": "next lint",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d out"
-    },
-  
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
+  },
   "dependencies": {
     "@clerk/nextjs": "^5.7.2",
     "@emotion/react": "^11.13.3",
