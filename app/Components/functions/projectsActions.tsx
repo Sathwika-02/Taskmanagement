@@ -2,9 +2,10 @@ import React, { Dispatch, SetStateAction } from "react";
 import { Project } from "../Data/AllProjects";
 import { IconData } from "../Pages/ContextApp";
 import {v4 as uuidv4 } from "uuid";
+import { ProjectFormData } from "../Windows/ProjectWindow";
 
 export function addNewProject(
-    data:FormData,
+    data:ProjectFormData,
     allProjects:Project[],
     setAllProjects:Dispatch<SetStateAction<Project[]>>,
     setOpenProjectWindow:Dispatch<SetStateAction<boolean>>,
@@ -51,7 +52,7 @@ export function deleteProject(
 export function editProject(
     selectedProject:Project|null,
     setSelectedProject:React.Dispatch<React.SetStateAction<Project|null>>,
-    data:FormData,
+    data:ProjectFormData,
     selectedIcon:IconData|null,
     allProjects:Project[],
     setAllProjects:React.Dispatch<React.SetStateAction<Project[]>>,

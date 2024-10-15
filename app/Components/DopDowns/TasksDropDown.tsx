@@ -82,6 +82,7 @@ export default function TasksDropDown() {
     }, [menuRef, setOpenTasksDropDown]);
 
     // Update dropdown positions
+ 
     const updatedLeftPos = tasksDropDownPositions.left || 0; // Default to 0 if undefined
     const updatedTopPos = tasksDropDownPositions.top || 0; // Default to 0 if undefined
     const dropDownToggle = openTasksDropDown ? "block" : "hidden";
@@ -90,8 +91,9 @@ export default function TasksDropDown() {
         <div
             ref={menuRef}
             style={{
-                left: clickedSelection === "priority" ? `${updatedLeftPos}px` : "auto",
-                top: `${updatedTopPos - 49}px`, // Adjust the top position
+                right: clickedSelection === "priority" ? `${updatedLeftPos-75}px` : "auto",
+                left: clickedSelection !== "priority" ? `${updatedLeftPos-405}px` : "auto", // Update right for non-priority
+                top: `${updatedTopPos -50}px`, // Adjust the top position
                 width: `${tasksDropDownPositions.width}px`,
             }}
             className={`${dropDownToggle} bg-white absolute p-3 z-[90] border border-slate-50 select-none shadow-md rounded-lg flex flex-col gap-2`}

@@ -17,12 +17,15 @@ import { addNewProject, editProject } from "../functions/projectsActions";
 import toast from "react-hot-toast";
 import { allIconsArray } from "../Data/AllIcons";
 import { Project } from "../Data/AllProjects";
+export type ProjectFormData = {
+    projectName: string;
+};
  const schema=z.object({
     projectName:z.string()
     .min(1,{message:"Project Name is required"})
     .max(30,{message:"Project Name must be 30 characters or less"})
  })
-//  type formData=z.infer<typeof schema>;
+//  type FormData=z.infer<typeof schema>;
 
 export function ProjectWindow(){
    
@@ -47,10 +50,10 @@ export function ProjectWindow(){
         setError,
         setFocus,
         reset
-    }=useForm<FormData>({
+    }=useForm<ProjectFormData>({
         resolver:zodResolver(schema),
     })
-    const onSubmit:SubmitHandler<FormData>=(data:FormData)=>{
+    const onSubmit:SubmitHandler<ProjectFormData>=(data:ProjectFormData)=>{
         console.log(data);
        
         const existingProject=allProjects.find(
@@ -74,7 +77,7 @@ export function ProjectWindow(){
         handleClose();
 
     }
-    async function ProjectsFunction(data:FormData){
+    async function ProjectsFunction(data:ProjectFormData){
         console.log("Form data",data);
         try{
              setIsLoading(true);
@@ -198,8 +201,8 @@ className="flex flex-col gap-2 pt-8 px-7 mt-3"
         register,
         errors
     }:{
-        register:UseFormRegister<FormData>;
-        errors:FieldErrors<FormData>
+        register:UseFormRegister<ProjectFormData>;
+        errors:FieldErrors<ProjectFormData>
     }){
         const {
             openProjectWindowObject:{openProjectWindow},

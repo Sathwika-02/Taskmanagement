@@ -552,6 +552,7 @@ function Header(){
               onClick={()=>setOpenTasksWindow(false)}
               />
             </div>
+            <div className="flex justify-between">
             <span className="font-semibold text-lg">
                 {selectedTask?"Edit Task":"Add New Task"}
             </span>
@@ -563,6 +564,7 @@ function Header(){
                 setSelectedTask(null);
               }}
               />
+              </div>
         </div>
         </div>
     )
