@@ -144,7 +144,7 @@ export function ProjectWindow(){
             // console.log("window opened,resetting form");
             // reset();
         }
-    },[openProjectWindow,reset])
+    },[openProjectWindow,reset,selectedProject,setSelectedIcon,setValue])
     console.log("project window rendered",openProjectWindow)
     return(
     <div className={`${

@@ -207,7 +207,7 @@ export function TasksWindow(){
              setFocus("taskName")
         }, 0);
         setSelectionErrors((prevstate) => prevstate.map((error) => ({ ...error, show: false })));
-    },[selectedTask])
+    },[selectedTask,priorityList,projectClicked,reset,setFocus,setSelectedIcon,setValue,updateAllProjects])
     const [selectionErrors,setSelectionErrors]=useState([
         {
             id:1,

@@ -49,7 +49,7 @@ useEffect(()=>{
     if(JSON.stringify(sortedProjects)!==JSON.stringify(allProjects)){
         setAllProjects(sortedProjects)
     }
-},[allProjects,sortingOptions,sortAllProjects])
+},[allProjects,sortingOptions,sortAllProjects,setAllProjects])
     function handleOptionSelected(catgoryIndex:number,optionIndex:number){
         const updateSortingOptipns=sortingOptions.map((category,cIndex)=>({
             ...category,
@@ -88,7 +88,7 @@ useEffect(()=>{
         if(JSON.stringify(sortedTasks)!==JSON.stringify(allTasks)){
             setallTasks(sortedTasks);
         }
-    },[allTasks])
+    },[allTasks,sortingOptions, setallTasks])
 
     function sortAllTasks(
         allTasks:Task[],

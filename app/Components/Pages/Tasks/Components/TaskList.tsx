@@ -42,7 +42,7 @@ export function TaskList(){
         }
         return tasks;
         
-    },[allProjects,allTasks,chosenProject,tabOptions])
+    },[allTasks,chosenProject,tabOptions])
 
     // const handleDeleteTask = (taskToDelete: Task) => {
     //     deleteTask({
